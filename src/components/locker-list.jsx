@@ -3,7 +3,6 @@ import React from "react";
 function LockerList(props) {
     return (
         <div className='locker-list' style={{
-            gridTemplateColumns: 'auto auto auto auto auto',
             padding: '15px', justifyContent: 'space-around',
             background: 'rgb(236, 236, 236)', alignItems: 'center',
             color: 'black', display: 'flex', margin: '10px'

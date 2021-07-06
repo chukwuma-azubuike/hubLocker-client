@@ -1,37 +1,27 @@
-import React, { useState } from 'react';
-// import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import Header from './components/header';
 import Search from './components/search';
 import Result from './components/result';
 
 function App() {
 
-  const [searchQuery, setSearchQuery] = useState();
   const [searchResult, setSearchResult] = useState();
 
-  function getLockers() {
+  function getLockers(query) {
 
-    const url = 'http://localhost:5000/api/search';
-    let options = {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: { query: searchQuery }
-    };
+    let url = `http://localhost:5000/api/search/${query}`;
 
-    // axios.post(url, { options })
-    //   .then(res => {
-    //     console.log(res);
-    //     setSearchResult(res);
-    //   })
-    //   .catch(err => console.log(err));
+    fetch(url)
+      .then(response =>
+        response.json()).then((data) => { data ? setSearchResult(data.name) : alert('null') })
+      .catch(err => {
+        setSearchResult('No Open Lockers Found');
+      });
   }
 
   function handleSearch(event) {
     let searchInput = event.target.value;
-    setSearchQuery(searchInput);
-    getLockers();
+    getLockers(searchInput);
   }
 
   return (

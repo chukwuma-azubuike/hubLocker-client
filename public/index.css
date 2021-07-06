@@ -12,17 +12,30 @@ code {
 a {
   text-decoration: none;
   color: black;
-  /* color: rgb(99, 177, 54); */
+  /* color: rgb(225, 226, 222); */
 }
 
-p{
+p {
   margin: 0;
 }
 
-h1{
+h1 {
+  color: rgba(247, 230, 211, 0.925);
   margin-top: 0;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
-.locker-list span{
-  width: 22%;
+
+.locker-list span {
+  width: 20%;
+}
+
+select {
+  width: 200px;
+  background: rgb(148, 148, 148);
+  height: 28px;
+}
+
+option {
+  background: rgb(236, 236, 236);
+  height: 28px;
 }
