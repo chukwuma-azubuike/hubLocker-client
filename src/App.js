@@ -2,10 +2,14 @@ import React, { useEffect, useState } from 'react';
 import Header from './components/header';
 import Search from './components/search';
 import Result from './components/result';
+import lockerCount from './dbExtraction/locker-count';
+import lockerInfo from './dbExtraction/locker-details';
 
 function App() {
 
   const [searchResult, setSearchResult] = useState();
+  const [searchCount, setSearchCount] = useState();
+
 
   function getLockers(query) {
 
@@ -13,9 +17,13 @@ function App() {
 
     fetch(url)
       .then(response =>
-        response.json()).then((data) => { data ? setSearchResult(data.name) : alert('null') })
+        response.json()).then((data) => {
+          setSearchCount(`${lockerCount(data)} Lockers Available`);
+          setSearchResult(lockerInfo(data));
+        })
       .catch(err => {
-        setSearchResult('No Open Lockers Found');
+        setSearchCount('No Open Lockers Found');
+        setSearchResult();
       });
   }
 
@@ -28,7 +36,7 @@ function App() {
     <div>
       <Header />
       <Search handleSearch={handleSearch} />
-      <Result searchResult={searchResult} />
+      <Result searchResult={searchResult} searchCount={searchCount} setSearchResult={setSearchResult} />
     </div>
   );
 }

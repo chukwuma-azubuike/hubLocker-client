@@ -8,7 +8,7 @@ function LockerList(props) {
             color: 'black', display: 'flex', margin: '10px'
         }} >
             <span>{props.lockerFound.dimension}</span>
-            <span>{props.lockerFound.pricing}</span>
+            <span>{props.lockerFound.price}</span>
             <span>1N For First Rent</span>
             <span>{props.lockerFound.availability}</span>
             <button type='button'

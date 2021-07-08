@@ -4,8 +4,6 @@ import lc from '../images/lc.jpg'
 
 function Result(props) {
 
-    console.log(`result ${props}`);
-
     const test = [
         { dimension: '15', pricing: '50cents', availability: '3 available' },
         { dimension: '134', pricing: '250cents', availability: '13 available' },
@@ -17,7 +15,7 @@ function Result(props) {
             <div>
                 <div style={{ margin: '0', background: 'rgb(236, 236, 236)', padding: '25px 15px' }} >
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <div>{props.searchResult}</div>
+                        <div>{props.searchCount}</div>
                         <div>
                             <span style={{ marginRight: '20px' }} >Sort By</span>
                             <select>
@@ -42,9 +40,10 @@ function Result(props) {
                                 <option>Large</option>
                             </select>
                         </div>
-                        {test.map((locker) => {
-                            return <LockerList lockerFound={locker} />
-                        })}
+                        {console.log(props.searchResult)}
+                        {props.searchResult ?
+                            (props.searchResult).map((locker) => <LockerList lockerFound={locker} />) :
+                            props.setSearchResult(false)}
                     </div>
                 </div>
             </div>
