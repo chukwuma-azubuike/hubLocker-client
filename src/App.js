@@ -4,6 +4,7 @@ import Search from './components/search';
 import Result from './components/result';
 import lockerCount from './dbExtraction/locker-count';
 import lockerInfo from './dbExtraction/locker-details';
+import capsValidation from './validation/capsValidation';
 
 function App() {
 
@@ -31,7 +32,8 @@ function App() {
 
   function handleSearch(event) {
     let searchInput = event.target.value;
-    getLockers(searchInput);
+    let validatedText = capsValidation(searchInput);
+    getLockers(validatedText);
   }
 
   return (
