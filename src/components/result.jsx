@@ -13,7 +13,7 @@ function Result(props) {
     return (
         <div>
             <div>
-                <div style={{ margin: '0', background: 'rgb(236, 236, 236)', padding: '25px 15px' }} >
+                <div style={{ margin: '0', background: 'rgb(236, 236, 236)', padding: '18px 15px' }} >
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>{props.searchCount}</div>
                         <div>
@@ -27,23 +27,24 @@ function Result(props) {
                         </div>
                     </div>
                 </div>
-                <div style={{ display: 'inline-block', margin: '15px' }} >
-                    <img src={lc} style={{ width: '250px' }} />
-                </div>
-                <div style={{ display: 'inline-block', width: '80%' }} >
-                    <div>
-                        <div style={{ margin: '10px' }} >
-                            <select>
-                                <option>Featured</option>
-                                <option>Small</option>
-                                <option>Medium</option>
-                                <option>Large</option>
-                            </select>
+                <div style={{ display: 'flex' }} >
+                    <div style={{ margin: '15px' }} >
+                        <img src={lc} style={{ width: '200px' }} />
+                    </div>
+                    <div style={{ width: '80%' }} >
+                        <div>
+                            <div style={{ margin: '15px 10px' }} >
+                                <select>
+                                    <option>Featured</option>
+                                    <option>Small</option>
+                                    <option>Medium</option>
+                                    <option>Large</option>
+                                </select>
+                            </div>
+                            {props.searchResult ?
+                                (props.searchResult).map((locker) => <LockerList cityId={props.cityId} lockerFound={locker} />) :
+                                props.setSearchResult(false)}
                         </div>
-                        {console.log(props.searchResult)}
-                        {props.searchResult ?
-                            (props.searchResult).map((locker) => <LockerList lockerFound={locker} />) :
-                            props.setSearchResult(false)}
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@ function Search(props) {
     return (
         <div style={{
             backgroundImage: `url(${bg})`, backgroundSize: '100%', backgroundRepeat: 'no-repeat',
-            height: '350px', padding: '50px 15px'
+            height: '250px', padding: '50px 15px'
         }} >
             <form>
                 <label>

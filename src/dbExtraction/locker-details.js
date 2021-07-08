@@ -1,12 +1,13 @@
 //Locker Model
 class LockerInfo {
-    constructor(name, size, dimension, price, firstRent, isAvailable) {
+    constructor(name, size, dimension, price, firstRent, isAvailable, location) {
         this.name = name;
         this.size = size;
         this.dimension = dimension;
         this.price = price;
         this.firstRent = firstRent;
         this.isAvailable = isAvailable;
+        this.location = location;
     }
 }
 
@@ -16,8 +17,8 @@ function lockerInfo(data) {
     const lockerInfoArray = [];
 
     (data.data).forEach(element => {
-        const { _id, name, size, dimension, price, firstRent, isAvailable } = element;
-        let item = new LockerInfo(name, size, dimension, price, firstRent, isAvailable);
+        const { _id, name, size, dimension, price, firstRent, isAvailable, location } = element;
+        let item = new LockerInfo(name, size, dimension, price, firstRent, isAvailable, location);
         lockerInfoArray.push(item);
     });
 

@@ -1,4 +1,5 @@
 import React from "react";
+import singleLockerCount from "../dbExtraction/single-locker-count";
 
 function LockerList(props) {
     return (
@@ -10,12 +11,13 @@ function LockerList(props) {
             <span>{props.lockerFound.dimension}</span>
             <span>{props.lockerFound.price}</span>
             <span>1N For First Rent</span>
-            <span>{props.lockerFound.availability}</span>
+            {/* {console.log(props.cityId)} */}
+            <span>{`${singleLockerCount(props.lockerFound.location, props.cityId)} Available`}</span>
             <button type='button'
                 style={{
                     background: 'rgb(99, 177, 54)',
-                    color: 'white', border:'none',
-                    fontWeight: 'bold', padding:'10px 40px'
+                    color: 'white', border: 'none',
+                    fontWeight: 'bold', padding: '10px 40px'
                 }} >Rent Now</button>
         </div>
     )

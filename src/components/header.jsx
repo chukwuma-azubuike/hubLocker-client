@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header() {
     return (
-        <nav style={{ display: 'flex', padding: '20px', justifyContent: 'space-between', background: 'rgb(204, 157, 56)' }} >
+        <nav style={{ display: 'flex', padding: '14px 20px', justifyContent: 'space-between', background: 'rgb(204, 157, 56)' }} >
             <div style={{ background: 'black', height: '50px', width: '10%', color: 'white', textAlign: 'center', display: 'flex', alignItems: 'center' }} >
                 <div style={{ margin: 'auto', display: '' }} >HUBLOCKER</div>
                 {/* <img src='' /> */}
