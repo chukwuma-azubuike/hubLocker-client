@@ -22,7 +22,7 @@ function App() {
         response.json()).then((data) => {
           setSearchCount(`${lockerCount(data)} Lockers Available`);
           setSearchResult(lockerInfo(data));
-          setCityId(data.cityId)
+          setCityId(data.cityId);
         })
       .catch(err => {
         setSearchCount('No Open Lockers Found');
@@ -31,8 +31,7 @@ function App() {
   }
 
   function handleSearch(event) {
-    let searchInput = event.target.value;
-    let validatedText = capsValidation(searchInput);
+    let validatedText = capsValidation(event.target.value);
     getLockers(validatedText);
   }
 

@@ -31,7 +31,7 @@ function Result(props) {
                     <div style={{ margin: '15px' }} >
                         <img src={lc} style={{ width: '200px' }} />
                     </div>
-                    <div style={{ width: '80%' }} >
+                    <div style={{ width: '84%' }} >
                         <div>
                             <div style={{ margin: '15px 10px' }} >
                                 <select>
