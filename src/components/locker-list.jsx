@@ -9,16 +9,19 @@ function LockerList(props) {
             color: 'black', display: 'flex', margin: '10px', fontWeight: 'bold'
         }} >
             <span>{`${props.lockerFound.size} ${props.lockerFound.dimension}`}</span>
-            <span style={{width:'35%', margin:'auto 50px'}}>N{props.lockerFound.price} per Item/mo N15,000 XX no of orders
+            <span style={{ width: '35%', margin: 'auto 50px' }}>N{props.lockerFound.price} per Item/mo N15,000 XX no of orders
                 Online only price
             </span>
             <span>1N For First Rent</span>
             {/* {console.log(props.cityId)} */}
-            <span>{`${singleLockerCount(props.lockerFound.location, props.cityId)} Available`}</span>
+            <span>{props.cityId ?
+                `${singleLockerCount(props.lockerFound.location, props.cityId)} Available` :
+                `${singleLockerCount(props.lockerFound.location, props.cityId, props.stateId)} Available`
+            }</span>
             <button type='button'
                 style={{
                     background: 'rgb(99, 177, 54)',
-                    color: 'white', border: 'none', width:'150px',
+                    color: 'white', border: 'none', width: '150px',
                     fontWeight: 'bold', padding: '8px 20px'
                 }} >Rent Now</button>
         </div>

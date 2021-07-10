@@ -10,7 +10,8 @@ function App() {
 
   const [searchResult, setSearchResult] = useState();
   const [searchCount, setSearchCount] = useState();
-  const [cityId, setCityId] = useState()
+  const [cityId, setCityId] = useState();
+  const [stateId, setStateId] = useState();
 
 
   function getLockers(query) {
@@ -23,6 +24,7 @@ function App() {
           setSearchCount(`${lockerCount(data)} Lockers Available`);
           setSearchResult(lockerInfo(data));
           setCityId(data.cityId);
+          setStateId(data.stateId);
         })
       .catch(err => {
         setSearchCount('No Open Lockers Found');
@@ -39,7 +41,7 @@ function App() {
     <div>
       <Header />
       <Search handleSearch={handleSearch} />
-      <Result searchResult={searchResult} cityId={cityId} searchCount={searchCount} setSearchResult={setSearchResult} />
+      <Result searchResult={searchResult} stateId={stateId} cityId={cityId} searchCount={searchCount} setSearchResult={setSearchResult} />
     </div>
   );
 }

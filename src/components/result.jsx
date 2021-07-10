@@ -42,7 +42,7 @@ function Result(props) {
                                 </select>
                             </div>
                             {props.searchResult ?
-                                (props.searchResult).map((locker) => <LockerList cityId={props.cityId} lockerFound={locker} />) :
+                                (props.searchResult).map((locker) => <LockerList stateId={props.stateId} cityId={props.cityId} lockerFound={locker} />) :
                                 props.setSearchResult(false)}
                         </div>
                     </div>
